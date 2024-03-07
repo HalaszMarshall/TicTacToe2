@@ -1,2 +1,3 @@
 # tictactoe2
-TicTacToe by Fireship
+TicTacToe by Bro Code
+Link: https://www.youtube.com/watch?v=AnmwHjpEhtA
