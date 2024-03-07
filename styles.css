@@ -1,0 +1,21 @@
+.cell{
+    width: 75px;
+    height: 75px;
+    border: 2px solid; /*1. create boxes/cells*/
+    box-shadow: 0 0 0 2px; /*4. thickens box walls*/
+    line-height: 75px; /*does not change font position much*/
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#gameContainer{
+font-family: 'Courier New', Courier, monospace;
+text-align: center; /*sets all text on the page*/
+}
+
+#cellContainer{
+    display:grid; 
+    grid-template-columns: repeat(3, auto); /*2. spreads the 9 cells into 3 columns of 3*/
+    width: 225px; /*3. sets width of container (square of 9 cells) to be exactly the width of the 3 cells (75px*3) so the 3 columns of 3 cells stick together*/
+    margin: auto; /*center container*/
+} 
