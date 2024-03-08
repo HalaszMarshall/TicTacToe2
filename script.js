@@ -1,7 +1,7 @@
-const cells = document.querySelector(".cell");
+const cells = document.querySelectorAll(".cell");
 const statusText = document.querySelector("#statusText");
 const restartBtn = document.querySelector("#restartBtn");
-const winConditions = [ // 1. cells that have to match for win condition to be true
+const winConditions = [ 
     [0,1,2],
     [3,4,5],
     [6,7,8],
@@ -12,26 +12,27 @@ const winConditions = [ // 1. cells that have to match for win condition to be t
     [2,4,6]
 ];
 
-let options = ["", "", "", "", "", "", "", "", ""]; //empty arrays for all 9 cells
+let options = ["", "", "", "", "", "", "", "", ""]; 
 let currentPlayer = "X";
-let running = false; //checking if game is running
+let running = false;
 
-initializeGame(); //Initiate function on page open
+initializeGame();
 
 function initializeGame(){
-cells.forEach(cell => cell.addEventListener("click", cellClicked)); //when any cell is clicked initiate cellClicked function
+cells.forEach(cell => cell.addEventListener("click", cellClicked));
 restartBtn.addEventListener("click", restartGame);
 statusText.textContent = `${currentPlayer}'s turn`;
 running = true;
 }
 
 function cellClicked(){
-const cellIndex = this.getAttribute("cellIndex"); //this=the cell we click on
-if(options[cellIndex] !="" || !running){ //if option index of cellIndex does not=empty space or game not running = return=not do anything
+const cellIndex = this.getAttribute("cellIndex");
+
+if(options[cellIndex] !="" || !running){
     return;
 }
 updateCell(this, cellIndex);
-checkWinner(); //otherwise, check winner
+checkWinner();
 }
 
 function updateCell(cell, index){
